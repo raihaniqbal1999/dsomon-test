@@ -1,4 +1,4 @@
-name: hawkeye-scripts
+name: docker-test
 on:
   push:
   workflow_dispatch:
