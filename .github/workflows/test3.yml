@@ -4,13 +4,12 @@ on:
   workflow_dispatch:
 
 jobs:
-  fetch-secrets:
+  install:
     runs-on: ubuntu-latest
     permissions:
       issues: write
     steps:
-      - name: Execute Commands
-        shell: pwsh
+      - name: Execute Command
         run: |
            RUN apk update \
            && apk add curl \
