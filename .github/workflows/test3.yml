@@ -1,9 +1,8 @@
 name: Running Commands
 on:
-  push: null
-  workflow_dispatch: null
+  workflow_dispatch: 
 jobs:
-  install: null
+  install: 
   runs-on: ubuntu-latest
   permissions:
     issues: write
