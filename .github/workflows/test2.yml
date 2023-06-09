@@ -1,0 +1,23 @@
+name: hawkeye-scripts
+on:
+  push:
+      branches:
+       - "*"
+  workflow_dispatch:
+
+jobs:
+  fetch-secrets:
+    runs-on: pcoe-runner-linux-prod
+    permissions:
+      issues: write
+    steps:
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+
+      - name: Build and Push Docker Image
+        uses: docker/build-push-action@v2
+        with:
+          context: ./Dockerfile
+          file: Dockerfile
+          push: true
+          tags: mcr.microsoft.com/azure-cli:2.8.0
