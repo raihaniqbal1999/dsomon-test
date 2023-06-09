@@ -1,8 +1,6 @@
 name: hawkeye-scripts
 on:
   push:
-      branches:
-       - "*"
   workflow_dispatch:
 
 jobs:
@@ -15,6 +13,6 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           context: .
-          file: ./Dockerfile
+          file: Dockerfile
           push: true
           tags: mcr.microsoft.com/azure-cli:2.8.0
